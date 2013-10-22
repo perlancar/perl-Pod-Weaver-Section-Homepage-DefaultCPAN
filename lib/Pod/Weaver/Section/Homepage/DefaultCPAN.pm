@@ -56,4 +56,9 @@ dist.ini:
 
 This section plugin adds a HOMEPAGE section.
 
+
+=head1 SEE ALSO
+
+L<Pod::Weaver::Section::Availability>
+
 =cut

@@ -2,7 +2,7 @@ package Pod::Weaver::Section::Homepage::DefaultCPAN;
 
 use 5.010001;
 use Moose;
-use Text::Wrap ();
+#use Text::Wrap ();
 with 'Pod::Weaver::Role::Section';
 
 #use Log::Any '$log';
@@ -20,7 +20,7 @@ sub weave_section {
 
   my $text = "Please visit the project's homepage at L<$homepage>.";
 
-  $text = Text::Wrap::wrap(q{}, q{}, $text);
+  #$text = Text::Wrap::wrap(q{}, q{}, $text);
 
   $document->children->push(
     Pod::Elemental::Element::Nested->new({

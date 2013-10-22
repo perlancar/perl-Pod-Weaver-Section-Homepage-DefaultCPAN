@@ -15,11 +15,10 @@ sub weave_section {
   my ($self, $document, $input) = @_;
 
   my $name = $input->{zilla}->name;
-  my $homepage = $input->{distmeta}{resources}{homepage} ?
-      $input->{distmeta}{resources}{homepage}{web} :
-          "https://metacpan.org/release/$name";
+  my $homepage = $input->{distmeta}{resources}{homepage} //
+      "https://metacpan.org/release/$name";
 
-  my $text = "Project homepage is at $homepage.";
+  my $text = "Please visit the project's homepage at L<$homepage>.";
 
   $text = Text::Wrap::wrap(q{}, q{}, $text);
 

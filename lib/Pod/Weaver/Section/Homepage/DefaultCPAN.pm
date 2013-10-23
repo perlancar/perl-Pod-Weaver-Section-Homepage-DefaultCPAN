@@ -35,7 +35,7 @@ sub weave_section {
 
 no Moose;
 1;
-# ABSTRACT: Add a HOMEPAGE section (defaults to MetaCPAN release page)
+# ABSTRACT: Add a HOMEPAGE section (homepage defaults to MetaCPAN release page)
 
 =for Pod::Coverage weave_section
 

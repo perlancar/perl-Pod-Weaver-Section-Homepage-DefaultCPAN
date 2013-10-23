@@ -45,7 +45,7 @@ In your C<weaver.ini>:
 
  [Homepage::DefaultCPAN]
 
-To specify a bugtracker other than C<https://metacpan.org/release/NAME>, in
+To specify homepage other than C<https://metacpan.org/release/NAME>, in
 dist.ini:
 
  [MetaResources]
@@ -54,7 +54,8 @@ dist.ini:
 
 =head1 DESCRIPTION
 
-This section plugin adds a HOMEPAGE section.
+This section plugin adds a HOMEPAGE section using C<homepage> metadata, or
+MetaCPAN release page if C<homepage> is not specified.
 
 
 =head1 SEE ALSO

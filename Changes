@@ -1,10 +1,15 @@
 Revision history for Pod-Weaver-Section-Homepage-DefaultCPAN
 
-0.02    2012-10-24 (SHARYANTO)
+0.03    2015-01-07 (PERLANCAR)
+
+        - Add 'text' attribute to allow text to be customized (Erik Carlsson).
+
+
+0.02    2013-10-24 (SHARYANTO)
 
         - No functional changes. Fix/update POD.
 
 
-0.01    2012-10-22 (SHARYANTO)
+0.01    2013-10-22 (SHARYANTO)
 
         - First release.

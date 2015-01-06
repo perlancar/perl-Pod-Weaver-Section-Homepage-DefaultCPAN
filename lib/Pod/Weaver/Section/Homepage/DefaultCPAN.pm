@@ -9,6 +9,12 @@ with 'Pod::Weaver::Role::Section';
 
 use Moose::Autobox;
 
+has text => (
+    is => 'rw',
+    isa => 'Str',
+    default => q{Please visit the project's homepage at L<%s>.},
+);
+
 # VERSION
 
 sub weave_section {
@@ -18,7 +24,7 @@ sub weave_section {
   my $homepage = $input->{distmeta}{resources}{homepage} //
       "https://metacpan.org/release/$name";
 
-  my $text = "Please visit the project's homepage at L<$homepage>.";
+  my $text = sprintf $self->text, $homepage;
 
   #$text = Text::Wrap::wrap(q{}, q{}, $text);
 
@@ -56,6 +62,15 @@ dist.ini:
 
 This section plugin adds a HOMEPAGE section using C<homepage> metadata, or
 MetaCPAN release page if C<homepage> is not specified.
+
+
+=head1 ATTRIBUTES
+
+=head2 text
+
+The text that is added. C<%s> is replaced by the homepage url.
+
+Default: C<Please visit the project's homepage at LE<lt>%sE<gt>.>
 
 
 =head1 SEE ALSO

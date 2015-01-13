@@ -1,8 +1,12 @@
 package Pod::Weaver::Section::Homepage::DefaultCPAN;
 
+# DATE
+# VERSION
+
 use 5.010001;
 use Moose;
 #use Text::Wrap ();
+with 'Pod::Weaver::Role::AddTextToSection';
 with 'Pod::Weaver::Role::Section';
 
 #use Log::Any '$log';
@@ -15,8 +19,6 @@ has text => (
     default => q{Please visit the project's homepage at L<%s>.},
 );
 
-# VERSION
-
 sub weave_section {
   my ($self, $document, $input) = @_;
 
@@ -28,15 +30,7 @@ sub weave_section {
 
   #$text = Text::Wrap::wrap(q{}, q{}, $text);
 
-  $document->children->push(
-    Pod::Elemental::Element::Nested->new({
-      command  => 'head1',
-      content  => 'HOMEPAGE',
-      children => [
-        Pod::Elemental::Element::Pod5::Ordinary->new({ content => $text }),
-      ],
-    }),
-  );
+  $self->add_text_to_section($document, $text, 'HOMEPAGE');
 }
 
 no Moose;

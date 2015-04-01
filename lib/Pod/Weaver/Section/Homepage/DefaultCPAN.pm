@@ -9,10 +9,6 @@ use Moose;
 with 'Pod::Weaver::Role::AddTextToSection';
 with 'Pod::Weaver::Role::Section';
 
-#use Log::Any '$log';
-
-use Moose::Autobox;
-
 has text => (
     is => 'rw',
     isa => 'Str',

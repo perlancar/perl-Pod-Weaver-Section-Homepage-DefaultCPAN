@@ -22,7 +22,7 @@ sub weave_section {
   my $homepage = $input->{distmeta}{resources}{homepage} //
       "https://metacpan.org/release/$name";
 
-  my $text = sprintf $self->text, $homepage;
+  my $text = sprintf($self->text, $homepage) . "\n\n";
 
   #$text = Text::Wrap::wrap(q{}, q{}, $text);
 
